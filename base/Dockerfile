@@ -22,7 +22,7 @@ ENV HADOOP_URL https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/
 
 ADD hadoop.tar.gz /tmp/hadoop.tar.gz
 
-RUN tar -xvf /tmp/hadoop.tar.gz -C /opt/ \
+RUN tar xvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz*
 
 RUN ln -s /opt/hadoop-$HADOOP_VERSION/etc/hadoop /etc/hadoop
