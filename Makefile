@@ -12,7 +12,7 @@ build:
 
 push:
 	docker push lingoxp/hadoop-base:$(current_branch)
-	docker push lingoxp/hadoop-namenode:$(current_branch)
+	docker push$(current_branch)
 	docker push lingoxp/hadoop-datanode:$(current_branch)
 	docker push lingoxp/hadoop-resourcemanager:$(current_branch)
 	docker push lingoxp/hadoop-nodemanager:$(current_branch)
