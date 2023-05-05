@@ -10,7 +10,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
       libsnappy-dev \
       krb5-user \
     && rm -rf /var/lib/apt/lists/*
-      
+
+
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 
 RUN curl -O https://dist.apache.org/repos/dist/release/hadoop/common/KEYS
@@ -43,5 +44,6 @@ COPY server.keytab /server.keytab
 
 RUN chmod a+x /entrypoint.sh
 
+COPY krb5.conf /etc/krb5.conf
 
 ENTRYPOINT ["/entrypoint.sh"]
