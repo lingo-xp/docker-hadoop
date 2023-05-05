@@ -20,9 +20,9 @@ RUN gpg --import KEYS
 ENV HADOOP_VERSION 3.3.5
 ENV HADOOP_URL https://www.apache.org/dist/hadoop/common/hadoop-$HADOOP_VERSION/hadoop-$HADOOP_VERSION.tar.gz
 
-ADD hadoop.tar.gz /tmp/hadoop.tar.gz
+COPY hadoop.tar.gz /tmp/hadoop.tar.gz
 
-RUN tar xvf /tmp/hadoop.tar.gz -C /opt/ \
+RUN tar -zxvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz*
 
 RUN ln -s /opt/hadoop-$HADOOP_VERSION/etc/hadoop /etc/hadoop
